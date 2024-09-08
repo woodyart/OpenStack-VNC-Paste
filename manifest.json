@@ -1,0 +1,38 @@
+{
+   "manifest_version": 3,
+   "name": "OpenStack VNC Paste",
+   "description": "Paste text to OpenStack VNC console",
+   "version": "0.1",
+   "author": "Andrey Dolbilin",
+   "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+   "background": {
+      "service_worker": "scripts/background.js"
+   },
+   "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": "images/icon-128.png",
+      "default_title": "OpenStack VNC Paste Extension"
+   },
+   "commands": {
+      "paste": {
+         "description": "Paste keypress listener",
+         "suggested_key": {
+            "default": "Ctrl+Shift+K",
+            "mac": "Command+Shift+K",
+            "linux": "Ctrl+Shift+K"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "matches": [ "http://*/vnc_lite.html*", "https://*/vnc_lite.html*" ],
+      "run_at": "document_end",
+      "js": [ "scripts/content.js", "scripts/jquery-3.7.1.min.js" ]
+   } ],
+   "permissions": [ "clipboardRead", "activeTab", "scripting", "storage" ]
+}
+ 

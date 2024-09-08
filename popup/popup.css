@@ -1,0 +1,13 @@
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    margin: 5px;
+}
+
+input, button {
+    margin: 5px;
+}
