@@ -29,7 +29,7 @@
       }
    },
    "content_scripts": [ {
-      "matches": [ "http://*/vnc_lite.html*", "https://*/vnc_lite.html*" ],
+      "matches": [ "http://*/vnc_*.html*", "https://*/vnc_*.html*" ],
       "run_at": "document_end",
       "js": [ "scripts/content.js", "scripts/jquery-3.7.1.min.js" ]
    } ],
